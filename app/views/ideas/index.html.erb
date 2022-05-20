@@ -1,0 +1,12 @@
+<h1>Welcome to the Posts!</h1>
+<p>read everthing people are talking about...</p>
+<ul>
+    <% if @ideas %>
+        <% @ideas.each do |idea| %>
+            <li>
+                <%= idea.name %> / <%= idea.description%> / <%= idea.picture%>
+            </li>
+            <%= link_to "see this post!", idea_path(idea.id) %>
+        <% end %>
+    <% end %>
+</ul>
